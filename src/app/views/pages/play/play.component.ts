@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 
 import {Meta, Title} from '@angular/platform-browser';
 import {Router} from '@angular/router';
@@ -26,7 +26,8 @@ export class PlayComponent implements OnInit {
   userName: any;
   UserProfile: any;
 
-  constructor(private titleService: Title,
+  constructor(public formBuilder: FormBuilder,
+              private titleService: Title,
               private router: Router,
               private metaTagService: Meta,
   ) {
@@ -46,15 +47,16 @@ export class PlayComponent implements OnInit {
     this.metaTagService.updateTag({property: 'og:image:alt', content: this.title});
 
 
-    this.playForm = new FormGroup({
-      numberTicket: new FormControl(null, [Validators.required])
+    this.playForm = this.formBuilder.group({
+      numberTicket:[null, Validators.required],
     });
+
     this.isFormSubmitted = false;
   }
 
   onSubmit(): void {
     if (this.playForm.valid) {
-      console.log('Sent');
+     // console.log('Sent');
     }
     this.isFormSubmitted = true;
   }
