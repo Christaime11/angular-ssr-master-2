@@ -15,6 +15,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './views/pages/home/home.component';
 import {NgParticlesModule} from "ng-particles";
+import {RouterModule} from "@angular/router";
+import {HttpClientJsonpModule, HttpClientModule} from "@angular/common/http";
+import {ReclamerComponent} from "./views/components/reclamer/reclamer.component";
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import {NgParticlesModule} from "ng-particles";
     HowToPlayComponent,
     NotificationComponent,
     BaseComponent,
-    SidebarComponent
+    SidebarComponent,
+    ReclamerComponent
   ],
   imports: [
     BrowserModule.withServerTransition({appId: 'serverApp'}),
@@ -33,7 +37,10 @@ import {NgParticlesModule} from "ng-particles";
     NgbModule,
     FormsModule,
     ReactiveFormsModule,
-    NgParticlesModule
+    NgParticlesModule,
+    RouterModule,
+    HttpClientModule,
+    HttpClientJsonpModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

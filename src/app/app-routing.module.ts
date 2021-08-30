@@ -1,7 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from "./views/pages/home/home.component";
-import {PlayComponent} from "./views/pages/play/play.component";
 
 const routes: Routes = [
   {
@@ -12,6 +11,11 @@ const routes: Routes = [
   {
     path: 'accueil',
     component: HomeComponent
+  },
+  {
+    path: 'profil',
+    loadChildren: () => import('./views/pages/profil/profil.module')
+      .then(mod => mod.ProfilModule)
   },
   {
     path: 'play',
