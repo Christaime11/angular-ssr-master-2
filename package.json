@@ -28,6 +28,7 @@
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4",
+    "jwt-decode": "^3.1.2",
     "@ng-bootstrap/ng-bootstrap": "^10.0.0",
     "@nguniversal/builders": "^11.0.1",
     "@tobynatooor/countdown": "^1.2.5",
