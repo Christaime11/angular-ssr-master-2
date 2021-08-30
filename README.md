@@ -1,82 +1,27 @@
-# Angular 12 Example Server Side Rendering
+# AngularSsrTest
 
-> An Angular starter kit featuring [Angular 12.1.3](https://angular.io), [Angular CLI 12.1.3](https://cli.angular.io/)
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.3.
 
-> it's part of a repo series designed to create a Web Application with Angular
+## Development server
 
-# Web Application Live Demo
-[https://angular.ganatan.com](https://angular.ganatan.com)
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
+## Code scaffolding
 
-## Quick start
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-```bash
-# choose a repo
-# download the example or clone the repo from github
-git clone https://github.com/ganatan/angular-ssr.git
+## Build
 
-# download the example or clone the repo from gitlab
-git clone https://gitlab.com/ganatan/angular-ssr.git
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-# download the example or clone the repo from bitbucket
-git clone https://bitbucket.org/ganatan/angular-ssr.git
+## Running unit tests
 
-# change directory
-cd angular-example-ssr
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-# install the repo with npm
-npm install
+## Running end-to-end tests
 
-# start the server
-npm start
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-```
-in your browser go to [http://localhost:4200](http://localhost:4200) 
+## Further help
 
-## Getting Started
-
-
-### Installation
-* `npm install` (installing dependencies)
-* `npm outdated` (verifying dependencies)
-
-### Development
-* `npm run start`
-* in your browser [http://localhost:4200](http://localhost:4200) 
-
-### Compilation
-* `npm run build`       ( without SSR)
-* `npm run build:ssr`   ( with SSR)
-
-### Production
-* `npm run serve:ssr`
-* in your browser [http://localhost:4000](http://localhost:4000) 
-
-## Tests
-* `npm run test`
-
-### Compilation
-* `npm run build`       ( without SSR)
-* `npm run build:ssr`   ( with SSR)
-
-### Production
-* `npm run serve:ssr`
-* in your browser [http://localhost:4000](http://localhost:4000) 
-
-### Prototype Bootstrap 5
-* `change directory` cd ui
-* launch html pages in your browser
-
-
-### Author
-* Author  : danny
-
-### Documentation
-
-English Tutorials
-- Installation - https://www.ganatan.com/tutorials/server-side-rendering-with-angular-universal
-- Tutorials Step by Step - https://www.ganatan.com/tutorials/en
-
-Tutoriels en français
-- Installation - https://www.ganatan.com/tutorials/server-side-rendering-avec-angular-universal
-- Tutoriels Etape par étape - https://www.ganatan.com/tutorials
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
