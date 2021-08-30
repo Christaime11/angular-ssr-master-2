@@ -10,7 +10,7 @@ import {AuthGuard} from "../../../core/authentification/auth.guard";
 const routes: Routes = [
   {
     path: '',
-    // canActivate: [AuthGuard],
+    canActivate: [AuthGuard],
     component: ProfilComponent,
     children: [
       { path: '',

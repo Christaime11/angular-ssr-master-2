@@ -22,6 +22,10 @@ const routes: Routes = [
     loadChildren: () => import('./views/pages/play/play.module')
       .then(mod => mod.PlayModule)
   },
+  {
+    path : 'about',
+    loadChildren: () => import('./views/pages/about/about.module').then(m => m.AboutModule)
+  },
 ]
 
 @NgModule({

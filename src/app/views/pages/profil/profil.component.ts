@@ -45,7 +45,7 @@ export class ProfilComponent implements OnInit {
     },
     {
       title: 'Modifer le Profil',
-      fragment: 'edit-profile',
+      fragment: 'modifier-informations',
       icon: 'fas fa-user-edit'
     },
     {
