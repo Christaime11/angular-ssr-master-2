@@ -31,6 +31,7 @@ import {FelicitationsComponent} from './views/components/felicitations/felicitat
 import {ErrorPageComponent} from './views/pages/error-page/error-page.component';
 import {HowToPlayComponent} from './views/components/how-to-play/how-to-play.component';
 import {ReclamerModule} from "./views/components/reclamer/reclamer.module";
+import {CommonModule} from "@angular/common";
 
 const cookieConfig: NgcCookieConsentConfig = {
   cookie: {
@@ -76,6 +77,7 @@ const cookieConfig: NgcCookieConsentConfig = {
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    CommonModule,
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
