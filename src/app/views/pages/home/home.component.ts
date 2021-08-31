@@ -5,7 +5,6 @@ import { AuthStateService } from '../../../core/authentification/auth-state.serv
 import { HowToPlayComponent } from '../../components/how-to-play/how-to-play.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Title, Meta } from '@angular/platform-browser';
-import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -25,7 +24,6 @@ export class HomeComponent implements OnInit {
   seconds: any;
   minutes: any;
   description: string;
-  someInterval: any;
 
   constructor(
     private titleService: Title,
@@ -47,7 +45,6 @@ export class HomeComponent implements OnInit {
     this.metaTagService.updateTag({property: 'og:image', content: '/assets/mango-bg-.jpg'});
     this.metaTagService.updateTag({property: 'og:image:alt', content: this.title});
 
-
     // User authentification state
     this.authState.userAuthState.subscribe(val => {
       this.isSignedIn = val;
@@ -60,18 +57,9 @@ export class HomeComponent implements OnInit {
     this.minutes = `${x.minutes % 60}`;
     this.seconds = `${x.seconds % 60}`;
 
-    /*setInterval(() => {
-      const y = timeUntil(this.finalDate);
-      this.days = `${y.days % 365}`;
-      this.hours = `${y.hours % 24}`;
-      this.minutes = `${y.minutes % 60}`;
-      this.seconds = `${y.seconds % 60}`;
-    }, 1000);*/
-
     this.zone.runOutsideAngular(() => {
       setInterval(() => {
-        const finalDate2 = '2021-09-13T00:00:00';
-        const y = timeUntil(finalDate2);
+        const y = timeUntil(this.finalDate);
         this.days = `${y.days % 365}`;
         this.hours = `${y.hours % 24}`;
         this.minutes = `${y.minutes % 60}`;
