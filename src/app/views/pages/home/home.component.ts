@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { timeUntil } from '@tobynatooor/countdown';
 import { Router } from '@angular/router';
+import { AuthStateService } from '../../../core/authentification/auth-state.service';
+import { HowToPlayComponent } from '../../components/how-to-play/how-to-play.component';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
@@ -19,12 +23,14 @@ export class HomeComponent implements OnInit {
   hours: any;
   seconds: any;
   minutes: any;
-  description= "Description";
+  description: string;
 
   constructor(
     private titleService: Title,
     private metaTagService: Meta,
     private router: Router,
+    private authState: AuthStateService,
+    private modalService: NgbModal
   ) { }
 
   ngOnInit(): void {
@@ -35,8 +41,28 @@ export class HomeComponent implements OnInit {
     this.metaTagService.updateTag({name: 'og:description', content: this.description});
     this.metaTagService.updateTag({property: 'og:image', content: '/assets/mango-bg-.jpg'});
     this.metaTagService.updateTag({property: 'og:image:alt', content: this.title});
-  }
 
+
+    // User authentification state
+    this.authState.userAuthState.subscribe(val => {
+      this.isSignedIn = val;
+    });
+
+    // Timer
+    const x = timeUntil(this.finalDate);
+    this.days = `${x.days % 365}`;
+    this.hours = `${x.hours % 24}`;
+    this.minutes = `${x.minutes % 60}`;
+    this.seconds = `${x.seconds % 60}`;
+
+    setInterval(() => {
+      const y = timeUntil(this.finalDate);
+      this.days = `${y.days % 365}`;
+      this.hours = `${y.hours % 24}`;
+      this.minutes = `${y.minutes % 60}`;
+      this.seconds = `${y.seconds % 60}`;
+    }, 1000);
+  }
 
   redirect(): void {
     if (this.isSignedIn){
@@ -44,6 +70,10 @@ export class HomeComponent implements OnInit {
     } else {
       this.router.navigate(['/login']);
     }
+  }
+
+  open(): void {
+    this.modalRef = this.modalService.open(HowToPlayComponent, {centered: true});
   }
 }
 

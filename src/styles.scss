@@ -15,6 +15,7 @@ $chocolate: #683C11;
 @import "https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700";
 @import "../node_modules/@fontsource/lobster-two";
 
+
 body {
   overflow-x: hidden;
   font-family: 'Montserrat', sans-serif !important;
@@ -59,7 +60,7 @@ a:focus {
 }
 
 .text-lobster {
-  font-family: 'Lobster Two', 'Montserrat', sans-serif !important;
+  font-family: 'Lobster Two', cursive, 'Montserrat', sans-serif !important;
 }
 
 .text-bold {
@@ -70,6 +71,11 @@ a:focus {
   text-decoration: underline !important;
 }
 
+.text-link {
+  text-decoration: underline !important;
+  color: #d98300;
+}
+
 .p-page {
   padding: 3rem !important;
 }
@@ -77,6 +83,7 @@ a:focus {
 .form-control {
   height: 50px;
 }
+
 #DataTables_Table_0_wrapper {
   overflow-x: scroll !important;
 }
@@ -173,6 +180,3 @@ app-play{
     padding: 3rem 5rem 3rem 5rem !important;
   }
 }
-
-/* Importing Bootstrap SCSS file. */
-@import '~bootstrap/scss/bootstrap';
