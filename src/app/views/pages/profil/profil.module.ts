@@ -24,7 +24,7 @@ import {MotDePasseComponent} from "./mot-de-passe/mot-de-passe.component";
     ProfilRoutingModule,
     ReactiveFormsModule,
     DataTablesModule,
-    NgbModule
+    NgbModule,
   ]
 })
 export class ProfilModule { }

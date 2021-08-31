@@ -13,10 +13,10 @@ const routes: Routes = [
     component: AboutComponent,
     children: [
       { path: '',
-        redirectTo: 'conditions-generales',
+        redirectTo: 'cgu',
         pathMatch: 'full'
       },
-      { path: 'conditions-generales', component: CguComponent },
+      { path: 'cgu', component: CguComponent },
       { path: 'cookies', component: CookiesComponent },
       { path: 'confidentiality', component: ConfidentialityComponent },
       { path: 'mentions-legales', component: MentionsLegalesComponent },

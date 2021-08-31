@@ -1,21 +1,19 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-
-import {PlayRoutingModule} from './play-routing.module';
+import {NgbModule} from "@ng-bootstrap/ng-bootstrap";
+import {ReclamerComponent} from "./reclamer.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {PlayComponent} from "./play.component";
-
 
 @NgModule({
   declarations: [
-    PlayComponent
+    ReclamerComponent
   ],
   imports: [
     CommonModule,
-    PlayRoutingModule,
+    NgbModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ]
 })
-export class PlayModule {
+export class ReclamerModule {
 }

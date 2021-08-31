@@ -1,21 +1,20 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 
-import {PlayRoutingModule} from './play-routing.module';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {PlayComponent} from "./play.component";
-
+import {LoginComponent} from "./login.component";
+import {LoginRoutingModule} from "./login-routing.module";
 
 @NgModule({
   declarations: [
-    PlayComponent
+    LoginComponent
   ],
   imports: [
     CommonModule,
-    PlayRoutingModule,
+    LoginRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ]
 })
-export class PlayModule {
+export class LoginModule {
 }
