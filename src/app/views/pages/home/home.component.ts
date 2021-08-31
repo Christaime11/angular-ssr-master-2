@@ -1,10 +1,12 @@
-import {Component, NgZone, OnInit} from '@angular/core';
+import {Component, Inject, NgZone, OnInit} from '@angular/core';
 import { timeUntil } from '@tobynatooor/countdown';
 import { Router } from '@angular/router';
 import { AuthStateService } from '../../../core/authentification/auth-state.service';
 import { HowToPlayComponent } from '../../components/how-to-play/how-to-play.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Title, Meta } from '@angular/platform-browser';
+import { isPlatformBrowser } from '@angular/common';
+import { PLATFORM_ID } from "@angular/core";
 
 @Component({
   selector: 'app-home',
@@ -26,6 +28,7 @@ export class HomeComponent implements OnInit {
   description: string;
 
   constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
     private titleService: Title,
     private metaTagService: Meta,
     private router: Router,
@@ -56,6 +59,11 @@ export class HomeComponent implements OnInit {
     this.seconds = 0;
 
     this.zone.runOutsideAngular(() => {
+
+    })
+
+    if (isPlatformBrowser(this.platformId)) {
+      //do something, only runs on the front end
       setInterval(() => {
         const y = timeUntil(this.finalDate);
         this.days = `${y.days % 365}`;
@@ -64,7 +72,9 @@ export class HomeComponent implements OnInit {
         this.seconds = `${y.seconds % 60}`;
         console.log("Hello");
       }, 1000)
-    })
+    }
+
+
 
 
 
