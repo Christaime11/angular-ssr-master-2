@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, NgZone, OnInit} from '@angular/core';
 import { timeUntil } from '@tobynatooor/countdown';
 import { Router } from '@angular/router';
 import { AuthStateService } from '../../../core/authentification/auth-state.service';
@@ -24,14 +24,26 @@ export class HomeComponent implements OnInit {
   seconds: any;
   minutes: any;
   description: string;
+  someInterval: any;
 
   constructor(
     private titleService: Title,
     private metaTagService: Meta,
     private router: Router,
     private authState: AuthStateService,
-    private modalService: NgbModal
-  ) { }
+    private modalService: NgbModal,
+    private zone: NgZone
+  ) {
+    this.zone.runOutsideAngular(() => {
+      setInterval(() => {
+        const y = timeUntil(this.finalDate);
+        this.days = `${y.days % 365}`;
+        this.hours = `${y.hours % 24}`;
+        this.minutes = `${y.minutes % 60}`;
+        this.seconds = `${y.seconds % 60}`;
+      }, 1000)
+    })
+  }
 
   ngOnInit(): void {
     // SEO
@@ -62,6 +74,7 @@ export class HomeComponent implements OnInit {
       this.minutes = `${y.minutes % 60}`;
       this.seconds = `${y.seconds % 60}`;
     }, 1000);*/
+
   }
 
   redirect(): void {
