@@ -13,8 +13,8 @@ $chocolate: #683C11;
 
 @import "../node_modules/bootstrap/scss/bootstrap";
 @import "https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700";
-@import "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css";
 @import "https://cdn.jsdelivr.net/npm/uikit@3.7.1/dist/css/uikit.min.css";
+@import "../node_modules/@fontsource/lobster-two";
 
 body {
   overflow-x: hidden;
@@ -60,7 +60,7 @@ a:focus {
 }
 
 .text-lobster {
-  font-family: 'Lobster Two', cursive, 'Montserrat', sans-serif !important;
+  font-family: 'Lobster Two', 'Montserrat', sans-serif !important;
 }
 
 .text-bold {
@@ -78,7 +78,6 @@ a:focus {
 .form-control {
   height: 50px;
 }
-
 #DataTables_Table_0_wrapper {
   overflow-x: scroll !important;
 }
