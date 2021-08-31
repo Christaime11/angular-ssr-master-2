@@ -33,16 +33,6 @@ export class HomeComponent implements OnInit {
     private modalService: NgbModal,
     private zone: NgZone
   ) {
-    this.zone.runOutsideAngular(() => {
-      setInterval(() => {
-        console.log('Hellp');
-        const y = timeUntil(this.finalDate);
-        this.days = `${y.days % 365}`;
-        this.hours = `${y.hours % 24}`;
-        this.minutes = `${y.minutes % 60}`;
-        this.seconds = `${y.seconds % 60}`;
-      }, 1000)
-    })
 
   }
 
@@ -60,12 +50,23 @@ export class HomeComponent implements OnInit {
       this.isSignedIn = val;
     });
 
-    // Timer
-    const x = timeUntil(this.finalDate);
-    this.days = `${x.days % 365}`;
-    this.hours = `${x.hours % 24}`;
-    this.minutes = `${x.minutes % 60}`;
-    this.seconds = `${x.seconds % 60}`;
+    this.days = 0;
+    this.hours = 0;
+    this.minutes = 0;
+    this.seconds = 0;
+
+    this.zone.runOutsideAngular(() => {
+      setInterval(() => {
+        const y = timeUntil(this.finalDate);
+        this.days = `${y.days % 365}`;
+        this.hours = `${y.hours % 24}`;
+        this.minutes = `${y.minutes % 60}`;
+        this.seconds = `${y.seconds % 60}`;
+        console.log("Hello");
+      }, 1000)
+    })
+
+
 
   }
 
