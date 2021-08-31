@@ -48,8 +48,8 @@ const routes: Routes = [
     component: ErrorPageComponent,
     data: {
       type: 404,
-      title: 'Page Not Found',
-      desc: 'Oopps!! The page you were looking for doesn\'t exist.'
+      title: 'Page Non Trouvé',
+      desc: 'Oups!! La page que vous cherchez n\'existe pas'
     }
   },
   { path: 'error/:type', component: ErrorPageComponent },
