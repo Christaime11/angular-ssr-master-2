@@ -1,10 +1,10 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {animate, query, style, transition, trigger,} from '@angular/animations';
-import {NgcCookieConsentService} from 'ngx-cookieconsent';
 import {RouterOutlet} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import {Meta} from '@angular/platform-browser';
-import {CanonicalService} from './core/shared/canonical.service';
+import {NgcCookieConsentService} from 'ngx-cookieconsent';
+import {CanonicalService} from "./core/shared/canonical.service";
 
 @Component({
   selector: 'app-root',
@@ -56,6 +56,7 @@ export class AppComponent implements OnInit, OnDestroy {
       {property: 'og:image:alt', content: this.title}
     ]);
     this.canonicalService.setCanonicalURL();
+
   }
 
   prepareRoute(outlet: RouterOutlet): any {

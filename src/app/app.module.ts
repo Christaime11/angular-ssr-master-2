@@ -77,6 +77,7 @@ const cookieConfig: NgcCookieConsentConfig = {
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    NgcCookieConsentModule.forRoot(cookieConfig),
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
@@ -88,7 +89,6 @@ const cookieConfig: NgcCookieConsentConfig = {
     HttpClientModule,
     HttpClientJsonpModule,
     NgParticlesModule,
-    NgcCookieConsentModule.forRoot(cookieConfig),
     DataTablesModule,
     SocialLoginModule,
     ReclamerModule,
