@@ -5,6 +5,7 @@ import { AuthStateService } from '../../../core/authentification/auth-state.serv
 import { HowToPlayComponent } from '../../components/how-to-play/how-to-play.component';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Title, Meta } from '@angular/platform-browser';
+import { isPlatformBrowser, isPlatformServer } from '@angular/common';
 
 @Component({
   selector: 'app-home',
@@ -34,15 +35,7 @@ export class HomeComponent implements OnInit {
     private modalService: NgbModal,
     private zone: NgZone
   ) {
-    this.zone.runOutsideAngular(() => {
-      setInterval(() => {
-        const y = timeUntil(this.finalDate);
-        this.days = `${y.days % 365}`;
-        this.hours = `${y.hours % 24}`;
-        this.minutes = `${y.minutes % 60}`;
-        this.seconds = `${y.seconds % 60}`;
-      }, 1000)
-    })
+
   }
 
   ngOnInit(): void {
@@ -74,6 +67,17 @@ export class HomeComponent implements OnInit {
       this.minutes = `${y.minutes % 60}`;
       this.seconds = `${y.seconds % 60}`;
     }, 1000);*/
+
+    this.zone.runOutsideAngular(() => {
+      setInterval(() => {
+        const finalDate2 = '2021-09-13T00:00:00';
+        const y = timeUntil(finalDate2);
+        this.days = `${y.days % 365}`;
+        this.hours = `${y.hours % 24}`;
+        this.minutes = `${y.minutes % 60}`;
+        this.seconds = `${y.seconds % 60}`;
+      }, 1000)
+    })
 
   }
 
