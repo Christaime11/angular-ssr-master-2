@@ -55,13 +55,13 @@ export class HomeComponent implements OnInit {
     this.minutes = `${x.minutes % 60}`;
     this.seconds = `${x.seconds % 60}`;
 
-    setInterval(() => {
+    /*setInterval(() => {
       const y = timeUntil(this.finalDate);
       this.days = `${y.days % 365}`;
       this.hours = `${y.hours % 24}`;
       this.minutes = `${y.minutes % 60}`;
       this.seconds = `${y.seconds % 60}`;
-    }, 1000);
+    }, 1000);*/
   }
 
   redirect(): void {
