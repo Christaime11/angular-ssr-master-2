@@ -33,6 +33,16 @@ export class HomeComponent implements OnInit {
     private modalService: NgbModal,
     private zone: NgZone
   ) {
+    this.zone.runOutsideAngular(() => {
+      setInterval(() => {
+        console.log('Hellp');
+        const y = timeUntil(this.finalDate);
+        this.days = `${y.days % 365}`;
+        this.hours = `${y.hours % 24}`;
+        this.minutes = `${y.minutes % 60}`;
+        this.seconds = `${y.seconds % 60}`;
+      }, 1000)
+    })
 
   }
 
@@ -56,16 +66,6 @@ export class HomeComponent implements OnInit {
     this.hours = `${x.hours % 24}`;
     this.minutes = `${x.minutes % 60}`;
     this.seconds = `${x.seconds % 60}`;
-
-    this.zone.runOutsideAngular(() => {
-      setInterval(() => {
-        const y = timeUntil(this.finalDate);
-        this.days = `${y.days % 365}`;
-        this.hours = `${y.hours % 24}`;
-        this.minutes = `${y.minutes % 60}`;
-        this.seconds = `${y.seconds % 60}`;
-      }, 1000)
-    })
 
   }
 
