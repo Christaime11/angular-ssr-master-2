@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-ssr-test": {
+    "thetiptop": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-ssr-test/browser",
+            "outputPath": "dist/thetiptop/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -34,7 +34,7 @@
               "node_modules/cookieconsent/build/cookieconsent.min.css",
               "node_modules/angular-archwizard/styles/archwizard.css",
               "node_modules/datatables.net-bs4/css/dataTables.bootstrap4.min.css",
-              "src/styles.scss",
+              "src/styles.scss"
             ],
             "scripts": [
               "node_modules/cookieconsent/build/cookieconsent.min.js",
@@ -82,10 +82,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-ssr-test:build:production"
+              "browserTarget": "thetiptop:build:production"
             },
             "development": {
-              "browserTarget": "angular-ssr-test:build:development"
+              "browserTarget": "thetiptop:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -93,7 +93,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-ssr-test:build"
+            "browserTarget": "thetiptop:build"
           }
         },
         "test": {
@@ -117,7 +117,7 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/angular-ssr-test/server",
+            "outputPath": "dist/thetiptop/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json",
             "inlineStyleLanguage": "scss"
@@ -144,12 +144,12 @@
           "builder": "@nguniversal/builders:ssr-dev-server",
           "configurations": {
             "development": {
-              "browserTarget": "angular-ssr-test:build:development",
-              "serverTarget": "angular-ssr-test:server:development"
+              "browserTarget": "thetiptop:build:development",
+              "serverTarget": "thetiptop:server:development"
             },
             "production": {
-              "browserTarget": "angular-ssr-test:build:production",
-              "serverTarget": "angular-ssr-test:server:production"
+              "browserTarget": "thetiptop:build:production",
+              "serverTarget": "thetiptop:server:production"
             }
           },
           "defaultConfiguration": "development"
@@ -163,12 +163,12 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-ssr-test:build:production",
-              "serverTarget": "angular-ssr-test:server:production"
+              "browserTarget": "thetiptop:build:production",
+              "serverTarget": "thetiptop:server:production"
             },
             "development": {
-              "browserTarget": "angular-ssr-test:build:development",
-              "serverTarget": "angular-ssr-test:server:development"
+              "browserTarget": "thetiptop:build:development",
+              "serverTarget": "thetiptop:server:development"
             }
           },
           "defaultConfiguration": "production"
@@ -176,5 +176,5 @@
       }
     }
   },
-  "defaultProject": "angular-ssr-test"
+  "defaultProject": "thetiptop"
 }
